@@ -82,7 +82,7 @@ public class Sales extends JFrame implements Observer {
 
         list = new DefaultListModel();
 
-        totalGoldL = new JLabel("Total Gold: ", SwingConstants.LEFT);
+        totalGoldL = new JLabel("Sale Total: ", SwingConstants.LEFT);
         totalSaleL = new JLabel(totalSales + "gp", SwingConstants.RIGHT);
 
         cashStackL = new JLabel("Cash Stack: ", SwingConstants.LEFT);
