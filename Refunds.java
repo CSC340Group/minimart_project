@@ -5,18 +5,10 @@
  */
 package csc340project;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.Panel;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.DefaultListModel;
@@ -25,9 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
@@ -39,16 +29,17 @@ import javax.swing.SwingConstants;
 public class Refunds extends JFrame implements Observer {
 
     /*
-    private Button clear = new Button("Clear");
-    private Button addcart = new Button("Add to refund");
-    private Button back = new Button("Back");
-    private Button checkout = new Button("Confirm refund");
+     private Button clear = new Button("Clear");
+     private Button addcart = new Button("Add to refund");
+     private Button back = new Button("Back");
+     private Button checkout = new Button("Confirm refund");
      */
     private static final int WIDTH = 750;
     private static final int HEIGHT = 350;
     private static int totalSales = 0;
 
     private JLabel totalSaleL, totalGoldL;
+    private JLabel cashStackL, cashTotalL;
     private JButton refund, reset;
     private JButton helm1B, helm2B, helm3B, helm4B, helm5B;
     private JButton body1B, body2B, body3B, body4B, body5B;
@@ -93,6 +84,9 @@ public class Refunds extends JFrame implements Observer {
 
         totalGoldL = new JLabel("Total Gold: ", SwingConstants.LEFT);
         totalSaleL = new JLabel(totalSales + "gp", SwingConstants.RIGHT);
+
+        cashStackL = new JLabel("Cash Stack: ", SwingConstants.LEFT);
+        cashTotalL = new JLabel(Inventory.cashStack + "gp", SwingConstants.LEFT);
 
         currentSale = new JList(list);
         currentSale.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -249,9 +243,17 @@ public class Refunds extends JFrame implements Observer {
         layout.putConstraint(SpringLayout.WEST, totalGoldL, 525, SpringLayout.WEST, pane);
         layout.putConstraint(SpringLayout.NORTH, totalGoldL, 265, SpringLayout.NORTH, pane);
 
+        pane.add(cashStackL);
+        layout.putConstraint(SpringLayout.WEST, cashStackL, 525, SpringLayout.WEST, pane);
+        layout.putConstraint(SpringLayout.NORTH, cashStackL, 285, SpringLayout.NORTH, pane);
+
         pane.add(totalSaleL);
         layout.putConstraint(SpringLayout.WEST, totalSaleL, 680, SpringLayout.WEST, pane);
         layout.putConstraint(SpringLayout.NORTH, totalSaleL, 265, SpringLayout.NORTH, pane);
+
+        pane.add(cashTotalL);
+        layout.putConstraint(SpringLayout.WEST, cashTotalL, 680, SpringLayout.WEST, pane);
+        layout.putConstraint(SpringLayout.NORTH, cashTotalL, 285, SpringLayout.NORTH, pane);
 
         pane.add(helm1B);
         layout.putConstraint(SpringLayout.WEST, helm1B, 5, SpringLayout.WEST, pane);
@@ -367,33 +369,33 @@ public class Refunds extends JFrame implements Observer {
 
         //PREVIOUS CODE, TESTING NEW LAYOUT ABOVE
         /*
-        super("Refunds:");
-        setSize(600, 600);
-        setVisible(true);
-        setLayout(new BorderLayout(5, 5));
-        Panel bottom = new Panel();
-        add(bottom, BorderLayout.SOUTH);
-        bottom.setLayout(new GridLayout(4, 2, 5, 5));
-        //bottom.add(new Label(""));
-        //bottom.add(new Label(""));
-        bottom.add(this.addcart);
-        bottom.add(this.clear);
-        bottom.add(this.checkout);        
-        bottom.add(this.back);
-        //allows you to press x to close the window 
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent we) {
-                System.exit(0);
-            }
-        }
-        );
-        back.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new MainMenu().setVisible(true);
-                setVisible(false);
-            }
-        });
+         super("Refunds:");
+         setSize(600, 600);
+         setVisible(true);
+         setLayout(new BorderLayout(5, 5));
+         Panel bottom = new Panel();
+         add(bottom, BorderLayout.SOUTH);
+         bottom.setLayout(new GridLayout(4, 2, 5, 5));
+         //bottom.add(new Label(""));
+         //bottom.add(new Label(""));
+         bottom.add(this.addcart);
+         bottom.add(this.clear);
+         bottom.add(this.checkout);        
+         bottom.add(this.back);
+         //allows you to press x to close the window 
+         addWindowListener(new WindowAdapter() {
+         public void windowClosing(WindowEvent we) {
+         System.exit(0);
+         }
+         }
+         );
+         back.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+         new MainMenu().setVisible(true);
+         setVisible(false);
+         }
+         });
          */
     }
 
@@ -401,7 +403,44 @@ public class Refunds extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            //System.out.println(totalSales);
+
+            //ADDS CLICKS FOR ITEMS BEING REFUNDED
+            Inventory.qh1 += Inventory.clickh1;
+            Inventory.qh2 += Inventory.clickh2;
+            Inventory.qh3 += Inventory.clickh3;
+            Inventory.qh4 += Inventory.clickh4;
+            Inventory.qh5 += Inventory.clickh5;
+
+            Inventory.qb1 += Inventory.clickb1;
+            Inventory.qb2 += Inventory.clickb2;
+            Inventory.qb3 += Inventory.clickb3;
+            Inventory.qb4 += Inventory.clickb4;
+            Inventory.qb5 += Inventory.clickb5;
+
+            Inventory.ql1 += Inventory.clickl1;
+            Inventory.ql2 += Inventory.clickl2;
+            Inventory.ql3 += Inventory.clickl3;
+            Inventory.ql4 += Inventory.clickl4;
+            Inventory.ql5 += Inventory.clickl5;
+
+            Inventory.qsh1 += Inventory.clicksh1;
+            Inventory.qsh2 += Inventory.clicksh2;
+            Inventory.qsh3 += Inventory.clicksh3;
+            Inventory.qsh4 += Inventory.clicksh4;
+            Inventory.qsh5 += Inventory.clicksh5;
+
+            Inventory.qsw1 += Inventory.clicksw1;
+            Inventory.qsw2 += Inventory.clicksw2;
+            Inventory.qsw3 += Inventory.clicksw3;
+            Inventory.qsw4 += Inventory.clicksw4;
+            Inventory.qsw5 += Inventory.clicksw5;
+            
+            clickReset();
+
+            Inventory.cashStack += totalSales;
+            cashTotalL.setText(Integer.toString(Inventory.cashStack) + "gp");
+            list.clear();
+            totalSales = 0;
             totalSaleL.setText(Integer.toString(totalSales) + "gp");
         }
 
@@ -411,9 +450,11 @@ public class Refunds extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
+            //RESET THE CLICKS
+            clickReset();
             list.clear();
             totalSales = 0;
-            Inventory.clickh1 = 0;
             totalSaleL.setText(Integer.toString(totalSales) + "gp");
         }
 
@@ -503,7 +544,7 @@ public class Refunds extends JFrame implements Observer {
 
             } else {
                 list.addElement("Helm   5   -3900 gp");
-                totalSales -= 150;
+                totalSales -= 3900;
                 totalSaleL.setText(Integer.toString(totalSales) + "gp");
             }
         }
@@ -868,6 +909,39 @@ public class Refunds extends JFrame implements Observer {
             }
         }
 
+    }
+    
+    public void clickReset() {
+        //RESET THE CLICKS
+        Inventory.clickh1 = 0;
+        Inventory.clickh2 = 0;
+        Inventory.clickh3 = 0;
+        Inventory.clickh4 = 0;
+        Inventory.clickh5 = 0;
+
+        Inventory.clickb1 = 0;
+        Inventory.clickb2 = 0;
+        Inventory.clickb3 = 0;
+        Inventory.clickb4 = 0;
+        Inventory.clickb5 = 0;
+
+        Inventory.clickl1 = 0;
+        Inventory.clickl2 = 0;
+        Inventory.clickl3 = 0;
+        Inventory.clickl4 = 0;
+        Inventory.clickl5 = 0;
+
+        Inventory.clicksh1 = 0;
+        Inventory.clicksh2 = 0;
+        Inventory.clicksh3 = 0;
+        Inventory.clicksh4 = 0;
+        Inventory.clicksh5 = 0;
+
+        Inventory.clicksw1 = 0;
+        Inventory.clicksw2 = 0;
+        Inventory.clicksw3 = 0;
+        Inventory.clicksw4 = 0;
+        Inventory.clicksw5 = 0;
     }
 
     @Override
