@@ -424,8 +424,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Helm   1   50 gp");
-            totalSales += 150;
+            list.addElement("Helm   1   -50 gp");
+            totalSales -= 150;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -435,8 +435,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Helm   2   300 gp");
-            totalSales += 400;
+            list.addElement("Helm   2   -300 gp");
+            totalSales -= 400;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -446,8 +446,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Helm   3   800 gp");
-            totalSales += 900;
+            list.addElement("Helm   3   -800 gp");
+            totalSales -= 900;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -457,8 +457,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Helm   4   1800 gp");
-            totalSales += 1900;
+            list.addElement("Helm   4   -1800 gp");
+            totalSales -= 1900;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -468,8 +468,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Helm   5   3800 gp");
-            totalSales += 3900;
+            list.addElement("Helm   5   -3800 gp");
+            totalSales -= 3900;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -479,8 +479,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Body   1   300 gp");
-            totalSales += 400;
+            list.addElement("Body   1   -300 gp");
+            totalSales -= 400;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -490,8 +490,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Body   2   900 gp");
-            totalSales += 1000;
+            list.addElement("Body   2   -900 gp");
+            totalSales -= 1000;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -501,8 +501,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Body   3   2100 gp");
-            totalSales += 2200;
+            list.addElement("Body   3   -2100 gp");
+            totalSales -= 2200;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -512,8 +512,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Body   4   4500 gp");
-            totalSales += 4600;
+            list.addElement("Body   4   -4500 gp");
+            totalSales -= 4600;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -523,8 +523,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Body   5   9300 gp");
-            totalSales += 9400;
+            list.addElement("Body   5   -9300 gp");
+            totalSales -= 9400;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -534,8 +534,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Legs   1   200 gp");
-            totalSales += 300;
+            list.addElement("Legs   1   -200 gp");
+            totalSales -= 300;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -545,8 +545,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Legs   2   600 gp");
-            totalSales += 700;
+            list.addElement("Legs   2   -600 gp");
+            totalSales -= 700;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -556,8 +556,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Legs   3   1400 gp");
-            totalSales += 1500;
+            list.addElement("Legs   3   -1400 gp");
+            totalSales -= 1500;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -567,8 +567,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Legs   4   3000 gp");
-            totalSales += 3100;
+            list.addElement("Legs   4   -3000 gp");
+            totalSales -= 3100;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -578,8 +578,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Legs   5   6100 gp");
-            totalSales += 6200;
+            list.addElement("Legs   5   -6100 gp");
+            totalSales -= 6200;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -589,8 +589,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Shield 1   100 gp");
-            totalSales += 300;
+            list.addElement("Shield 1   -100 gp");
+            totalSales -= 300;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -600,8 +600,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Shield 2   300 gp");
-            totalSales += 400;
+            list.addElement("Shield 2   -300 gp");
+            totalSales -= 400;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -611,8 +611,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Shield 3   500 gp");
-            totalSales += 600;
+            list.addElement("Shield 3   -500 gp");
+            totalSales -= 600;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -622,8 +622,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Shield 4   1100 gp");
-            totalSales += 1200;
+            list.addElement("Shield 4   -1100 gp");
+            totalSales -= 1200;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -633,8 +633,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Shield 5   2300 gp");
-            totalSales += 2400;
+            list.addElement("Shield 5   -2300 gp");
+            totalSales -= 2400;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -644,8 +644,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Sword  1   150 gp");
-            totalSales += 250;
+            list.addElement("Sword  1   -150 gp");
+            totalSales -= 250;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -655,8 +655,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Sword  2   400 gp");
-            totalSales += 500;
+            list.addElement("Sword  2   -400 gp");
+            totalSales -= 500;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -666,8 +666,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Sword  3   900 gp");
-            totalSales += 1000;
+            list.addElement("Sword  3   -900 gp");
+            totalSales -= 1000;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -677,8 +677,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Sword  4   1900 gp");
-            totalSales += 1900;
+            list.addElement("Sword  4   -1900 gp");
+            totalSales -= 1900;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
         }
         
@@ -688,8 +688,8 @@ public class OrderInventory extends JFrame implements Observer {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.addElement("Sword  5   3900 gp");
-            totalSales += 3900;
+            list.addElement("Sword  5   -3900 gp");
+            totalSales -= 3900;
             totalSaleL.setText(Integer.toString(totalSales)+ "gp");
             
         }
